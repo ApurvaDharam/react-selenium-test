@@ -5,15 +5,15 @@ describe("React App UI Test", function () {
   this.timeout(10000);
   let driver;
 
-  before(async () => {
-    driver = await new Builder().forBrowser("chrome").build();
+  before(function () {
+    driver = new Builder().forBrowser("chrome").build();
   });
 
-  after(async () => {
-    await driver.quit();
+  after(function () {
+    driver.quit();
   });
 
-  it("should load the homepage and display React text", async () => {
+  it("should load the homepage and display React text", async function () {
     await driver.get("http://localhost:3000");
     const title = await driver.findElement(By.css("h1")).getText();
     expect(title).to.include("React");
