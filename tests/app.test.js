@@ -15,7 +15,7 @@ describe("React App UI Test", function () {
 
   it("should load the homepage and display React text", async function () {
     await driver.get("http://localhost:3000");
-    const title = await driver.findElement(By.css("h1")).getText();
+    const title = await driver.findElement(By.css("p")).getText();
     expect(title).to.include("React");
   });
 });
