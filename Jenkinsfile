@@ -30,10 +30,13 @@ pipeline {
 
         stage('Run Selenium Tests') {
             steps {
-                sh 'npm run test:ui'
+                script{
+                    sh 'npm run test:ui'
+                }
+                //archive test results
+                junit 'test-results/results.xml'
             }
-            // archive test results
-            junit 'test-results/results.xml'
+            
         }
     }
 
