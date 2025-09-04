@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:ui": "mocha ./tests/*.test.js --timeout 5000",
+    "test:ui": "mocha ./tests/*.test.js --timeout 5000 --reporter mocha-junit-reporter --reporter-options mochaFile=./test-results/results.xml",
     "lint": "eslint ./src ./tests --ext .js,.jsx"
   },
   "eslintConfig": {
@@ -44,6 +44,7 @@
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-mocha": "^10.4.1",
     "mocha": "^11.7.2",
+    "mocha-junit-reporter": "^2.2.1",
     "selenium-webdriver": "^4.35.0"
   }
 }

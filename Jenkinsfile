@@ -32,6 +32,8 @@ pipeline {
             steps {
                 sh 'npm run test:ui'
             }
+            // archive test results
+            junit 'test-results/results.xml'
         }
     }
 
