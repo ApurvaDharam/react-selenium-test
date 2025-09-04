@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/ApurvaDharam/react-selenium-test.git'
+                git branch: 'main',
+                    url: 'https://github.com/ApurvaDharam/react-selenium-test.git'
             }
         }
 
@@ -34,9 +35,9 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            junit '**/test-results.xml'
-        }
-    }
+    // post {
+    //     always {
+    //         junit '**/test-results.xml'
+    //     }
+    // }
 }
